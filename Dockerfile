@@ -8,13 +8,13 @@ RUN npm install
 
 COPY ./ /app/
 
-RUN npm run build -- --output-path=./dist/out --output-hashing=all --configuration $configuration --aot
+RUN npm run build -- --output-path=./dist/ --output-hashing=all --configuration $configuration --aot
 
 #Stage 1, base on Nginix, to have only the compile app, ready for production with nginx
 
 FROM nginx:1.21.3-alpine
 
-COPY --from=build-stage /app/dist/out /usr/share/nginx/html
+COPY --from=build-stage /app/dist/browser /usr/share/nginx/html
 
 COPY ./nginx.conf /etc/nginx/conf.d/default.conf
 
