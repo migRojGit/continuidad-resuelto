@@ -1,0 +1,27 @@
+.terminal-window {
+  font-family: 'Courier New', Courier, monospace;
+  background-color: black;
+  color: rgb(2, 242, 2) !important;
+  width: auto;
+  height: auto;
+  margin: 1rem 1rem 1rem 1rem;
+  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+
+  .p-panel-header {
+    background-color: black;
+    color: rgb(2, 242, 2) !important;
+    border: none;
+  }
+  .p-panel-content{
+    background-color: black;
+    color: rgb(2, 242, 2) !important;
+    border: none;
+    padding: 1rem 5rem 1rem 1rem;
+  }
+  .terminal-description{
+
+  }
+  .terminal-body > ul > ul{
+    margin: 1rem 0rem 0rem 0rem;
+  }
+}

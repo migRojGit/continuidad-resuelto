@@ -1,0 +1,98 @@
+
+  .dock-window {
+    width: 100%;
+    height: 7vh;
+    position: relative;
+    background-repeat: repeat;
+    background-size: contain;
+    background-attachment: fixed;
+    border-bottom-left-radius: 1%;
+    border-bottom-right-radius: 1%;
+    border-top-left-radius: 1%;
+    border-top-right-radius: 1%;
+}
+
+.dark-tooltip {
+  .p-tooltip {
+      .p-tooltip-arrow {
+          border-top-color: var(--surface-900);
+      }
+
+      .p-tooltip-text {
+          background-color: var(--surface-900);
+      }
+  }
+}
+
+.content-window{
+  display: flex;
+  flex-direction: column;
+  align-content: flex-start;
+  justify-content: flex-start;
+  margin: 1rem 1rem 0rem 0rem;
+}
+
+.p-card-header img{
+  border-top-right-radius: 1rem;
+  border-top-left-radius: 1rem;
+}
+
+.card-container {
+  .card {
+      width: 75px;
+      height: 75px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 1rem;
+      user-select: none;
+      padding: 0;
+
+      &:last-child {
+          margin-right: 0;
+      }
+  }
+}
+.p-card-subtitle{
+  color: #212121 !important;
+}
+.grid-confuturo {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    grid-column-gap: 1.5px;
+    grid-row-gap: 4px;
+    .div-child-1 { grid-area: 1 / 1 / 2 / 2; }
+    .div-child-2 { grid-area: 1 / 2 / 2 / 6; }
+    .div-child-3 { grid-area: 2 / 1 / 3 / 2; }
+    .div-child-4 { grid-area: 2 / 2 / 3 / 6; }
+    .div-child-5 { grid-area: 3 / 1 / 4 / 2; }
+    .div-child-6 { grid-area: 3 / 2 / 4 / 6; }
+    .div-child-7 { grid-area: 4 / 1 / 5 / 2; }
+    .div-child-8 { grid-area: 4 / 2 / 5 / 6; }
+    .div-child-9 { grid-area: 5 / 1 / 6 / 2; }
+    .div-child-10 { grid-area: 5 / 2 / 6 / 6; }
+    .div-child-11 { grid-area: 6 / 1 / 7 / 2; }
+    .div-child-12 { grid-area: 6 / 2 / 7 / 6; }
+  }
+.grid-confuturo div:nth-child(odd){
+  font-weight: bolder;
+}
+.grid-confuturo div{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.back-image-conf
+{
+  background-image: url('../../images/logo-confuturo.svg');
+    background-repeat: repeat;
+    background-size: auto;
+    background-attachment: fixed;
+    color: rgb(7, 7, 7);
+    margin: 1rem;
+    filter: drop-shadow(2px 4px 6px black);
+    border-top-right-radius: 1rem;
+    border-top-left-radius: 1rem;
+}
+

@@ -1,0 +1,36 @@
+app-section-table{
+  margin: 1rem 1rem 1rem 1rem;
+  border-radius: 1rem;
+}
+.rounded-image{
+  border-radius: 2rem;
+}
+.confirm-dialog-test{
+  background-color: red;
+}
+.modify-user{
+  .p-avatar {
+    display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 7rem;
+      height: 7rem;
+      font-size: 1rem;
+      border: solid 3px rgba(255, 255, 255, 0);
+      position: fixed;
+      top: 4rem;
+      filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.7));
+      img{
+        border: solid 0px rgb(255 255 255 / 0%);
+        border-radius: 50%;
+      }
+  }
+  span{
+    display: flex;
+    margin: 0.5rem 0.5rem 0.5rem 0.5rem;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+  }
+}

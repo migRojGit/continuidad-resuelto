@@ -1,0 +1,31 @@
+<div class="card-effects" *ngFor="let person of collection; let i = index">
+  <p-card [styleClass]="'back-image-conf'"  header="{{ nameConstructor(person.name) }}" subheader="{{ person.email }}" [style]="{ width: '360px' }">
+    <ng-template pTemplate="header">
+        <img alt="Card" src="{{ person.picture.large }}" />
+    </ng-template>
+   <section class="grid-confuturo">
+      <div class="div-child-1">Celular: </div>
+      <div class="div-child-2">{{ person.cell }}</div>
+      <div class="div-child-3">Teléfono: </div>
+      <div class="div-child-4">{{ person.phone }}</div>
+      <div class="div-child-5">Dirección: </div>
+      <div class="div-child-6">{{ streetConstructor(person.location.street)}}</div>
+      <div class="div-child-7">País: </div>
+      <div class="div-child-8">{{ person.location.country }}</div>
+      <div class="div-child-9">Estado: </div>
+      <div class="div-child-10">{{ person.location.state }}</div>
+      <div class="div-child-11">Ciudad: </div>
+      <div class="div-child-12">{{ person.location.city }}</div>
+   </section>
+    <ng-template pTemplate="footer">
+        <div class="flex gap-3 mt-1">
+            <p-button pRipple label="Eliminar" class="w-full" styleClass="w-full" (click)="deleteUser(person.login.uuid)" severity="danger"/>
+        </div>
+    </ng-template>
+  </p-card>
+</div>
+<p-toast
+    [showTransformOptions]="'translateY(100%)'"
+    [showTransitionOptions]="'1000ms'"
+    [hideTransitionOptions]="'1000ms'"
+    [showTransformOptions]="'translateX(100%)'" />

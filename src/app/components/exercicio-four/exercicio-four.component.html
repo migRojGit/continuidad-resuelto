@@ -1,0 +1,15 @@
+<p-panel [styleClass]="'terminal-window'" header="{{ problem.title}}" [toggleable]="false">
+  <div class="terminal-description">
+    <p>
+      {{ problem.description }}
+    </p>
+  </div>
+  <div class="terminal-body">
+    <ul>
+      <li *ngFor="let item of problem.body">{{ item }}</li>
+      <ul>
+        <li *ngFor="let item of problem.list">{{ item }}</li>
+      </ul>
+    </ul>
+  </div>
+</p-panel>

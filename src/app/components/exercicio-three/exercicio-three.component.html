@@ -1,0 +1,17 @@
+<p-panel [styleClass]="'terminal-window'" header="{{ problem.title}}" [toggleable]="false">
+  <p>
+      {{ problem.description }}
+  </p>
+  <p>
+    {{ problem.body }}
+  </p>
+  <p>
+    {{ problem.exemple }}
+  </p>
+  <p>
+    Resultado de la función aplicada {{ showProblem(0, 7) }}
+  </p>
+  <p>
+    {{ genericResponse() | json }}
+  </p>
+</p-panel>

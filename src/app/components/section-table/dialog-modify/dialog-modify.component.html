@@ -1,0 +1,83 @@
+<p-dialog
+[(visible)]="displayDialog_"
+[style]="{ width: '450px' }"
+header="Modificación de Usuario"
+[modal]="true"
+(onHide)="cancel(true)"
+styleClass="p-fluid modify-user">
+    <ng-template pTemplate="content">
+      <div class="inline-flex align-items-center justify-content-center gap-2">
+        <p-avatar
+            class="shadow-4 rounded-image"
+            image="{{ focusUser_.picture }}"
+            shape="circle" />
+      </div>
+        <img
+            src="{{selectedLocation.itemImageSrc}}"
+            [alt]="selectedLocation.title"
+            class="block m-auto pb-3 w-30rem location-img"
+        />
+        <span>{{ selectedLocation.title }}</span>
+        <form [formGroup]="form">
+          <div class="field">
+            <label for="name">Username</label>
+            <input
+                type="text"
+                pInputText
+                id="username"
+                formControlName="username"
+                required
+                />
+        </div>
+
+        <div class="formgrid grid">
+            <div class="field col">
+                <label for="price">País</label>
+                <div class="card flex justify-content-start">
+                  <p-listbox
+                      [options]="locationCollection"
+                      [(ngModel)]="selectedLocation"
+                      (click)="newLocation(selectedLocation.title)"
+
+                      [ngModelOptions]="{ standalone: true }"
+                      optionLabel="location"
+                      [listStyle]="{ 'max-height': '250px' }"
+                      [style]="{ width: '15rem' }"
+                      [listStyle]="{'max-height': '80px'}">
+                          <ng-template let-location pTemplate="item">
+                              <div class="flex align-items-center gap-2">
+                                  <img
+                                      src="https://primefaces.org/cdn/primeng/images/demo/flag/flag_placeholder.png"
+                                      [class]="'flag flag-' + location.code.toLowerCase()"
+                                      style="width: 18px" />
+                                  <div>{{ location.title }}</div>
+                              </div>
+                          </ng-template>
+                  </p-listbox>
+              </div>
+            </div>
+
+        </div>
+        </form>
+    </ng-template>
+
+    <ng-template pTemplate="footer">
+        <p-button
+            pRipple
+            label="Cancel"
+            icon="pi pi-times"
+            severity="danger"
+            (click)="cancel(true)"
+            [text]="true"
+           />
+        <p-button
+            pRipple
+            label="Modificar"
+            icon="pi pi-check"
+            severity="success"
+            [text]="true"
+            (click)="modifyUser()"
+            [disabled]="form.invalid"
+            />
+    </ng-template>
+</p-dialog>
